@@ -53,6 +53,18 @@ define( function( require ) {
 
     },
 
+    setPoints: function(xarr, yarr) {
+      this.clear();
+      for (var j=0; j < xarr.length; j++) {
+          this.addPoint(xarr[j], yarr[j]);
+      }
+    },
+
+    range: function(start, stop) {
+        /* Yield a range of integer values, [lower, upper) */
+        return Array.apply(null, Array(stop - start)).map(function (_, i) {return start + i;})
+    },
+
     get length() {
       return this.xPoints.length;
     }
